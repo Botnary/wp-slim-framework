@@ -6,12 +6,15 @@ I built this plugin from a need of using a micro framework as Slim but inside Wo
 Installation
 ------------
 
-Copy wp-slim-framework folder with all it's content's into /wp-content/plugins directory. From Wordpress administrator enable the plugin and you are ready to go.
+Copy wp-slim-framework folder with all it's content's into /wp-content/plugins directory.
+From Wordpress administrator enable the plugin and you are ready to go. But keep in mind that after enabling this plugin
+Wordpress must use permalinks `Settings -> Permalinks` use any structure except default one and `Save changes`.
 
 Usage
 -----
 To use it all you have to do is to map your routes.
-This plugin will register your routes when action `slim_mapping` is triggered. This action has one argument which is the Slim object.
+This plugin will register your routes when action `slim_mapping` is triggered.
+This action has one argument which is the Slim object.
 
 Example of usage:
     
@@ -44,4 +47,8 @@ Example of usage inside of a class:
             printf("User is %s",$user);
         }
     }
-Note: All routes must have the prefix `/slim/api`. This is added to avoid misunderstandings with Wordpress permalinks. But feel free to change it as you wish in `wp-slim-framework/wp-slim-framework.php` on line 17 `'(slim/api/)' => 'index.php'` and line 24 `if (strstr($_SERVER['REQUEST_URI'], '/slim/api')) {`
+Note: All routes must have the prefix `/slim/api`. This is added to avoid misunderstandings with Wordpress permalinks.
+But feel free to change it as you wish in `wp-slim-framework/wp-slim-framework.php`:
+ * line 17 `'(slim/api/)' => 'index.php'`
+ * line 24 `if (strstr($_SERVER['REQUEST_URI'], '/slim/api')) {`
+
