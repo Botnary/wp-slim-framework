@@ -12,8 +12,9 @@ Usage
 -----
 To use it all you have to do is to map your routes.
 This plugin will register your routes when action `slim_mapping` is triggered. This action has one argument which is the Slim object.
->add_action('slim_mapping',function($slim){
->>$slim->get('/slim/api/user/:u',function($user){
->>printf("User is %s",$user);            
->>});
->});
+`add_action('slim_mapping',function($slim){
+  $slim->get('/slim/api/user/:u',function($user){
+  printf("User is %s",$user);            
+  });
+});
+`
