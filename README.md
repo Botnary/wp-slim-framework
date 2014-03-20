@@ -47,8 +47,8 @@ Example of usage inside of a class:
             printf("User is %s",$user);
         }
     }
-Note: All routes must have the prefix `/slim/api`. This is added to avoid misunderstandings with Wordpress permalinks.
-But feel free to change it as you wish in `wp-slim-framework/wp-slim-framework.php`:
- * line 17 `'(slim/api/)' => 'index.php'`
- * line 24 `if (strstr($_SERVER['REQUEST_URI'], '/slim/api')) {`
+The default base path of the url is `/slim/api`. Added the possibility to change the base path, it can be found
+in `Settings -> Slim Framework`.
+Note: All routes must have the default base path `/slim/api` or the one used here `Settings -> Slim Framework`.
+This is added to avoid misunderstandings with Wordpress permalinks.
 
